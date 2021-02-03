@@ -6,10 +6,11 @@ app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
+lines = open("./generated.txt", encoding="utf8").readlines() 
+
 @app.route('/api/', methods=['GET'])
 @cross_origin()
 def result():
-    lines = open("./generated.txt", encoding="utf8").readlines() 
     randomString = random.SystemRandom().choice(lines)
     if randomString.strip() != "====================":
         print(randomString.strip())
