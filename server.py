@@ -11,7 +11,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 def result():
     lines = open("./generated.txt", encoding="utf8").readlines() 
     randomString = random.choice(lines)
-    if randomString != "\n" and randomString != "====================":
+    if randomString.strip() != "====================":
         print(randomString.strip())
         return jsonify({'string': randomString.strip()})
     
