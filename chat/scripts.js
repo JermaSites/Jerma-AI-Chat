@@ -390,7 +390,7 @@ const newMessage = async () => {
 };
 
 (function loop() {
-    var rand = randomIntFromInterval(500, 3000);
+    var rand = randomIntFromInterval(250, 2000);
     setTimeout(function() {
         newMessage();
             loop();  
