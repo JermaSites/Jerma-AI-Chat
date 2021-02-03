@@ -12,7 +12,7 @@ lines = open("./generated.txt", encoding="utf8").readlines()
 @cross_origin()
 def result():
     randomString = random.SystemRandom().choice(lines)
-    if randomString.strip() != "====================" and randomString.strip() != " " and randomString.strip() != "\n" and randomString.strip() != "@Jerma985":
+    if randomString.strip() != "====================" and randomString.strip() != " " and randomString.strip() != "\n" and randomString.strip() != "@Jerma985" and randomString.strip() != ":":
         print(randomString.strip())
         return jsonify({'string': randomString.strip()})
     else:
