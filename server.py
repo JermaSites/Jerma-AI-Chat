@@ -15,6 +15,13 @@ def result():
         print(randomString.strip())
         return jsonify({'string': randomString.strip()})
     
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+# if __name__ == "__main__":
+#     port = int(os.environ.get("PORT", 5000))
+#     app.run(host='0.0.0.0', port=port)
+
+lines = open("./generated.txt", encoding="utf8").readlines() 
+# print(random.SystemRandom())
+randomString = random.SystemRandom().choice(lines)
+if randomString.strip() != "====================":
+    print(randomString.strip())
+    # return jsonify({'string': randomString.strip()})
