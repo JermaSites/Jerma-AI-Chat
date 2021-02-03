@@ -390,7 +390,7 @@ const newMessage = async () => {
 };
 
 (function loop() {
-    var rand = Math.round(Math.random() * (3000 - 500)) + 500;
+    var rand = randomIntFromInterval(500, 3000);
     setTimeout(function() {
         newMessage();
             loop();  
@@ -412,7 +412,7 @@ function randomIntFromInterval(min, max) { // min and max included
 }
  
 
-for(i = 0; i < 15; i++) {
-    newMessage();
-}
+// for(i = 0; i < 15; i++) {
+//     newMessage();
+// }
 
