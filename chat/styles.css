@@ -121,6 +121,8 @@ body {
     color: rgb(173, 173, 184);
     font-family: "Ubuntu";
     font-size: 13px;
-    position: absolute;
     bottom: 0;
+    position: fixed;
+    right: 0;
+    max-width: 50%;
 }
