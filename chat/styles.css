@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
 .chatMessage2 {
     min-height: 30px;
     display: flex;
@@ -107,9 +110,17 @@ body {
 
 #fakeWelcome {
     color: rgb(173, 173, 184);
-    font-family: "Inter", "Roobert", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Ubuntu";
     font-size: 13px;
     font-weight: 20px;
     padding-left: 1em;
     padding-right: 1em;
+}
+
+#disclaimer {
+    color: rgb(173, 173, 184);
+    font-family: "Ubuntu";
+    font-size: 13px;
+    position: absolute;
+    bottom: 0;
 }
