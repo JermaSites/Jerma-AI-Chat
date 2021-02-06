@@ -140,3 +140,7 @@ body {
     background-color: rgba(24, 24, 27, 0.75);
     padding: 10px;
 }
+
+a {
+    color: rgb(169, 112, 255)
+}
