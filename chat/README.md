@@ -1,0 +1,1 @@
+Originally this site was located at https://aichat.jerma.io/chat (I planned on having a main site that would display `/chat` in an iframe and allow pop-out), however it now seems better to me to have the entire site be the "pop-out". Many people have already linked to https://aichat.jerma.io/chat though so a redirect exists here for the foreseeable future.
