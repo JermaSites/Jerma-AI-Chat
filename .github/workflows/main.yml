@@ -13,4 +13,4 @@ jobs:
         CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
 
         CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
-        PURGE_URLS: '["https://aichat.jerma.io/chat", "https://aichat.jerma.io/chat/styles.css", "https://aichat.jerma.io/chat/scripts.js"]'
+        PURGE_URLS: '["https://aichat.jerma.io/index.html", "https://aichat.jerma.io/styles.css", "https://aichat.jerma.io/scripts.js"]'
