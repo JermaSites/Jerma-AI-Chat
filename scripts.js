@@ -386,7 +386,9 @@ const newMessage = async () => {
     chatMessage.appendChild(messageBox);
     chatMessage2.appendChild(chatMessage);
     document.getElementById("chatContainer").appendChild(chatMessage2);
-    window.scrollTo(0,document.body.scrollHeight);
+    if(document.getElementById("scroll").checked === true) {
+        window.scrollTo(0,document.body.scrollHeight);
+    }
 };
 
 (function loop() {
