@@ -352,10 +352,10 @@ var regex = new RegExp("\\b(" + words.join("|") + ")\\b", "gi");
 var replacer = function(value) { return map[value]; };
 
 const getRandomMessage = async () => {
-    const response = await fetch('https://jermai.scrypt.workers.dev', {
+    const response = await fetch('https://jerma-ai.herokuapp.com/api/', {
         method: 'GET',
         headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
         }
     });
     const myJson = await response.json(); //extract JSON from the http response
