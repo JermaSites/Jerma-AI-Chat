@@ -356,7 +356,6 @@ const getRandomMessage = async () => {
         method: 'GET',
         headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://jermai.scrypt.workers.dev'
         }
     });
     const myJson = await response.json(); //extract JSON from the http response
