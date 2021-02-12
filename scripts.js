@@ -352,14 +352,14 @@ var regex = new RegExp("\\b(" + words.join("|") + ")\\b", "gi");
 var replacer = function(value) { return map[value]; };
 
 const getRandomMessage = async () => {
-    const response = await fetch('https://jerma-ai.herokuapp.com/api/', {
+    const response = await fetch('https://jermai.scrypt.workers.dev', {
         method: 'GET',
         headers: {
-        'Content-Type': 'application/json'
+            "Content-Type": "text/plain;charset=UTF-8"
         }
     });
-    const myJson = await response.json(); //extract JSON from the http response
-    return myJson.string;
+    let data = await response.text(); //extract JSON from the http response
+    return data;
     // document.getElementById("twitchChat").innerHTML = (twitchEmoji.parse( myJson.string ), { emojiSize : 'medium' } );
 };
 
@@ -392,7 +392,7 @@ const newMessage = async () => {
 };
 
 (function loop() {
-    var rand = randomIntFromInterval(250, 2000);
+    var rand = randomIntFromInterval(4000, 5000);
     setTimeout(function() {
         newMessage();
             loop();  
@@ -412,9 +412,3 @@ function makeid(length) {
 function randomIntFromInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
- 
-
-// for(i = 0; i < 15; i++) {
-//     newMessage();
-// }
-
