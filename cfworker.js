@@ -2,7 +2,7 @@ addEventListener('fetch', event => {
     event.respondWith(handleRequest(event.request))
   })
   
-  const url = "https://raw.githubusercontent.com/JermaSites/Jerma-AI-Chat/main/generated.txt"
+  const url = "https://aichat.jerma.io/generated.txt"
   /**
    * gatherResponse awaits and returns a response body as a string.
    * Use await gatherResponse(..) in an async function to get the response body
@@ -17,8 +17,8 @@ addEventListener('fetch', event => {
   async function handleRequest() {
     const init = {
       headers: {
-        "Access-Control-Allow-Origin": "aichat.jerma.io",
-        "content-type": "text/plain;charset=UTF-8",
+        "Access-Control-Allow-Origin": "*",
+        "content-type": "application/json",
       },
     }
   
@@ -26,5 +26,7 @@ addEventListener('fetch', event => {
     const results = await gatherResponse(response)
     const messages = results.split('\n')
     const randomMessage = messages[Math.floor(Math.random() * messages.length)]
-    return new Response(randomMessage)
+    var obj = { string: randomMessage }
+    const jsonrm = JSON.stringify(obj)
+    return new Response(jsonrm)
   }
