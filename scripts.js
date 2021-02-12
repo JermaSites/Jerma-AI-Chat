@@ -352,14 +352,14 @@ var regex = new RegExp("\\b(" + words.join("|") + ")\\b", "gi");
 var replacer = function(value) { return map[value]; };
 
 const getRandomMessage = async () => {
-      
-      const results = fetch('./generated.txt')
-      const messages = results.split('\n')
+
+      var str = fetch('https://aichat.jerma.io/generated.txt')
+      var messages = str.toString().split('\n')
       const randomMessage = messages[Math.floor(Math.random() * messages.length)]
       var obj = { string: randomMessage }
       const jsonrm = JSON.stringify(obj)
-      const myJson = jsonrm.json(); //extract JSON from the http response
-    return myJson.string;
+      //const myJson = jsonrm.json(); //extract JSON from the http response
+    return jsonrm.string;
 };
 
 const colours = ["rgb(218, 165, 32)", "rgb(255, 69, 0)", "rgb(46, 139, 87)", "rgb(210, 105, 30)", "rgb(95, 158, 160)", "rgb(30, 144, 255)", "rgb(255, 105, 180)", "rgb(138, 43, 226)", "rgb(0, 255, 127)"];
