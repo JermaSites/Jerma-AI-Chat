@@ -354,6 +354,7 @@ var replacer = function(value) { return map[value]; };
 const getRandomMessage = async () => {
     const response = await fetch('https://jermai.scrypt.workers.dev', {
         method: 'GET',
+        mode: 'no-cors',
         headers: {
             "Content-Type": "text/plain;charset=UTF-8"
         }
