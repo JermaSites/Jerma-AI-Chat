@@ -352,16 +352,15 @@ var regex = new RegExp("\\b(" + words.join("|") + ")\\b", "gi");
 var replacer = function(value) { return map[value]; };
 
 const getRandomMessage = async () => {
-    const response = await fetch('https://jermai.scrypt.workers.dev', {
+    const response = await fetch('https://jermai.scrypt.workers.dev/', {
         method: 'GET',
         mode: 'no-cors',
         headers: {
-            "Content-Type": "text/plain;charset=UTF-8"
+        'Content-Type': 'application/json'
         }
     });
-    let data = await response.text(); //extract JSON from the http response
-    console.log(data)
-    return data;
+    const myJson = await response.json(); //extract JSON from the http response
+    return myJson.string;
     // document.getElementById("twitchChat").innerHTML = (twitchEmoji.parse( myJson.string ), { emojiSize : 'medium' } );
 };
 
