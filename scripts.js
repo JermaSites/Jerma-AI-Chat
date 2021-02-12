@@ -358,17 +358,16 @@ const getRandomMessage = async () => {
       const randomMessage = messages[Math.floor(Math.random() * messages.length)]
       var obj = { string: randomMessage }
       const jsonrm = JSON.stringify(obj)
-      //const myJson = jsonrm.json(); //extract JSON from the http response
-    return jsonrm.string;
+      return new Response(jsonrm)
 };
 
 const colours = ["rgb(218, 165, 32)", "rgb(255, 69, 0)", "rgb(46, 139, 87)", "rgb(210, 105, 30)", "rgb(95, 158, 160)", "rgb(30, 144, 255)", "rgb(255, 105, 180)", "rgb(138, 43, 226)", "rgb(0, 255, 127)"];
 
 const newMessage = async () => {
     var newMessage = await getRandomMessage();
-    newMessage = newMessage.replace(":)", "<img alt='\:-?\)' title='\:-?\)' class='twitch-emote twitch-emote-0' src='https://static-cdn.jtvnw.net/emoticons/v1/1/1.0'>");
-    newMessage = newMessage.replace("D:", "<img alt='D:' title='D:' class='twitch-emote twitch-emote-0' src='https://cdn.betterttv.net/emote/55028cd2135896936880fdd7/1x'>");
-    newMessage = newMessage.replace(regex, replacer);
+    newMessage = newMessage.toString().replace(":)", "<img alt='\:-?\)' title='\:-?\)' class='twitch-emote twitch-emote-0' src='https://static-cdn.jtvnw.net/emoticons/v1/1/1.0'>");
+    newMessage = newMessage.toString().replace("D:", "<img alt='D:' title='D:' class='twitch-emote twitch-emote-0' src='https://cdn.betterttv.net/emote/55028cd2135896936880fdd7/1x'>");
+    newMessage = newMessage.toString().replace(regex, replacer);
     var messageBox = document.createElement("span");
     var chatMessage = document.createElement("div");
     var chatMessage2 = document.createElement("div");
@@ -391,7 +390,7 @@ const newMessage = async () => {
 };
 
 (function loop() {
-    var rand = randomIntFromInterval(250, 2000);
+    var rand = randomIntFromInterval(250, 1500);
     setTimeout(function() {
         newMessage();
             loop();  
