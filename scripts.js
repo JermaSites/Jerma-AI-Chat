@@ -355,14 +355,12 @@ const url = "https://aichat.jerma.io/generated.txt"
 
 var getRandomMessage = async () => {
 
-    const response = await fetch(url)
-    var results = await gatherResponse(response)
-    results = results.toString()
-    const messages = results.split('\n')
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)]
-    const jsonmessage = { string: randomMessage }
-    const jsonrm = JSON.stringify(jsonmessage)
-    return new Response(jsonrm)
+    const response = await fetch(url) //get all the messages
+    var results = await gatherResponse(response) //idk why but I think I need this
+    results = results.toString() //make it a string
+    const messages = results.split('\n') //seperate by line
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)] //generate random line number and pick that line
+    return (randomMessage) //return that line
 };
 
 
