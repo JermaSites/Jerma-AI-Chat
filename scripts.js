@@ -359,6 +359,7 @@ const getRandomMessage = async () => {
         }
     });
     let data = await response.text(); //extract JSON from the http response
+    console.log(data)
     return data;
     // document.getElementById("twitchChat").innerHTML = (twitchEmoji.parse( myJson.string ), { emojiSize : 'medium' } );
 };

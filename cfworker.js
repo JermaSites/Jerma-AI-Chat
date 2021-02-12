@@ -17,8 +17,8 @@ addEventListener('fetch', event => {
   async function handleRequest() {
     const init = {
       headers: {
-        "Access-Control-Allow-Origin": "*",
-        "content-type": "plain/text",
+        "Access-Control-Allow-Origin": "aichat.jerma.io",
+        "content-type": "text/plain;charset=UTF-8",
       },
     }
   
