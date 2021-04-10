@@ -347,7 +347,7 @@ var words = [];
 $.each(map, function (k) { words.push(k); });
 // Regex to globally, case-insensitively match words. Note that this simplistic
 // regex will treat punctuation like ' or - as word separators, so beware!
-var regex = new RegExp("\\b(" + words.join("|") + ")\\b", "gi");
+var regex = new RegExp("\\b(" + words.join("|") + ")\\b", "g");
 // Replacer function.
 var replacer = function (value) { return map[value]; };
 
