@@ -1,0 +1,5 @@
+/*
+  Permissions-Policy: interest-cohort=()
+
+https://:aichat.pages.dev/*
+  X-Robots-Tag: noindex
