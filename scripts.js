@@ -353,12 +353,19 @@ var replacer = function (value) { return map[value]; };
 
 const url = "https://aichat.jerma.io/generated.txt"
 
-var getRandomMessage = async () => {
+let messages = null;
+var getMessages = async () => {
+    if(messages == null) {
+        const response = await fetch(url) //get all the messages
+        var results = await gatherResponse(response) //idk why but I think I need this
+        results = results.toString() //make it a string
+        messages = results.split('\n') //seperate by line
+    }
+    return messages //return that line
+};
 
-    const response = await fetch(url) //get all the messages
-    var results = await gatherResponse(response) //idk why but I think I need this
-    results = results.toString() //make it a string
-    const messages = results.split('\n') //seperate by line
+var getRandomMessage = async () => {
+    const messages = await getMessages();
     const randomMessage = messages[Math.floor(Math.random() * messages.length)] //generate random line number and pick that line
     return (randomMessage) //return that line
 };
